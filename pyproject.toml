@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "hrm_meditation"
+version = "0.1.0"
+description = "Heart rate monitor guided meditation"
+authors = ["Martin Ueding <mu@martin-ueding.de>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pexpect = "^4.8.0"
+click = "^8.0.3"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.920"
+black = "^21.12b0"
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
