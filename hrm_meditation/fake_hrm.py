@@ -10,6 +10,7 @@ class FakeHeartRateMonitor(HeartRateMonitor):
 
     def get_heart_rate(self) -> int:
         self.step += 1
-        return int(
-            80 + 20 * math.cos(self.step * 2 * math.pi / 30) + random.gauss(0, 5)
-        )
+        base = 80
+        variable = 20 * math.cos(self.step * 2 * math.pi / 30)
+        noise = random.gauss(0, 5)
+        return int(base + variable + noise)
