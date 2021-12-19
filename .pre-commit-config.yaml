@@ -16,7 +16,7 @@ repos:
         files: '.*\.py'
       - id: mypy
         name: Static type checking
-        entry: poetry run mypy -p vigilant_crypto_snatch
+        entry: poetry run mypy -p hrm_meditation
         language: system
         files: '.*\.py'
         pass_filenames: false

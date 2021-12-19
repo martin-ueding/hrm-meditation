@@ -1,15 +1,16 @@
 """
 This code is inspired by https://github.com/fg1/BLEHeartRateLogger/blob/master/BLEHeartRateLogger.py by fg1.
 """
-
-import pexpect
+import pexpect  # type: ignore
 
 from hrm_meditation.interfaces import HeartRateMonitor
 
 
 class GarminHeartRateMonitor(HeartRateMonitor):
     def __init__(self):
-        self.gatt = pexpect.spawn('gatttool', ['-b', 'FA:1F:75:28:5B:2C', '-t', 'random', '--interactive'])
+        self.gatt = pexpect.spawn(
+            "gatttool", ["-b", "FA:1F:75:28:5B:2C", "-t", "random", "--interactive"]
+        )
         self.gatt.expect(r"\[LE\]>")
         self.gatt.sendline("connect")
 

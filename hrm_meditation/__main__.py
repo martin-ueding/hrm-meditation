@@ -1,5 +1,6 @@
-import click
 import time
+
+import click
 
 from hrm_meditation.garmin_hrm import GarminHeartRateMonitor
 
