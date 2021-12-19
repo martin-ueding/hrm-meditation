@@ -1,0 +1,9 @@
+@startuml
+
+interface HeartRateMonitor {
+    get_heart_rate(): float
+}
+
+class GarminHeartRateMonitor implements HeartRateMonitor
+
+@enduml
