@@ -1,9 +1,21 @@
 @startuml
+allowmixing
 
 interface HeartRateMonitor {
     get_heart_rate(): float
 }
 
 class GarminHeartRateMonitor implements HeartRateMonitor
+class FakeHeartRateMonitor implements HeartRateMonitor
+
+component pexpect
+GarminHeartRateMonitor --> pexpect
+
+interface Observable {
+    feed_measurement(int): None
+    get_observable(): float
+}
+
+class ExponentialMovingAverage implements Observable
 
 @enduml
