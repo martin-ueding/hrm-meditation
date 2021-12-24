@@ -15,13 +15,10 @@ def main():
         heart_rate = hrm.get_heart_rate()
         ema_obs.feed_measurement(heart_rate)
         ema = ema_obs.get_observable()
-        if heart_rate > ema + 2:
-            color = "🔴"
-        elif heart_rate >= ema - 2:
-            color = "🟡"
-        else:
-            color = "🟢"
-        print(f"Step {i:3d}: HR {heart_rate:3d}/min, HR EMA: {ema:5.1f}/min. {color}")
+        output = [" "] * 80
+        output[int((ema - 40) / 2)] = "o"
+        output[(heart_rate - 40) // 2] = "#"
+        print(f"{heart_rate:3d}", "[", "".join(output), "]")
 
 
 if __name__ == "__main__":
